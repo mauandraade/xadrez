@@ -1,19 +1,19 @@
-﻿namespace Tabuleiro
+﻿namespace tabuleiro
 {
     class Position
     {
-        public int Linha { get; set; }
-        public int Coluna { get; set; }
+        public int linha { get; set; }
+        public int coluna { get; set; }
 
         public Position(int linha, int coluna)
         {
-            Linha = linha;
-            Coluna = coluna;
+            this.linha = linha; // palavra this autoreferencia
+            this.coluna = coluna;
         }
 
         public override string ToString()
         {
-            return Linha+", "+Coluna;
+            return linha+", "+coluna;
         }
     }
 }
