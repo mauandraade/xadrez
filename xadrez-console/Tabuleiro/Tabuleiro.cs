@@ -16,15 +16,18 @@ namespace tabuleiro
             this.colunas = colunas;
             pecas = new Peca[linhas, colunas];
         }
+
         public Peca peca(int linha, int coluna)
         {
             return pecas[linha, coluna];
         }
 
+
         public Peca peca(Position pos)
         {
             return pecas[pos.linha, pos.coluna];
         }
+
 
         public bool existePeca(Position pos)
         {
@@ -41,6 +44,18 @@ namespace tabuleiro
             p.posicao = pos;
         }
 
+        public Peca retirarPeca(Position pos)
+        {
+            if(peca(pos) == null)
+            {
+                return null;
+            }
+            Peca aux = peca(pos);
+            aux.posicao = null;
+            pecas[pos.linha, pos.coluna] = null;
+            return aux;
+
+        }
 
         public bool posicaoValida(Position pos)
         {
